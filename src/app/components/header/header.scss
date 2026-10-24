@@ -1,17 +1,27 @@
+:host {
+  display: block;
+  width: 100%;
+  position: relative;   /* 🆕 ancora o mobile-nav absoluto dentro do header */
+  z-index: 100;
+}
+
 header {
   padding: 24px 0;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;             /* 🆕 em vez de width:100% sozinho */
   z-index: 100;
-  background-color: var(--bg-light); /* Para garantir que o menu mobile fique por cima */
+  background-color: var(--bg-light);
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;            /* 🆕 evita colar em telas estreitas */
+  min-width: 0;         /* 🆕 */
 }
 
 .logo {
@@ -22,7 +32,8 @@ header {
   font-size: 20px;
   color: var(--text-dark);
   text-decoration: none;
-  z-index: 101; /* Fica acima do menu mobile */
+  z-index: 101;
+  flex-shrink: 0;       /* 🆕 logo não encolhe */
 
   svg {
     color: var(--accent);
@@ -31,7 +42,6 @@ header {
   }
 }
 
-/* Menu Desktop */
 .desktop-nav ul {
   display: flex;
   gap: 32px;
@@ -50,7 +60,6 @@ header {
   }
 }
 
-/* Botão Hambúrguer (escondido no desktop) */
 .menu-toggle {
   display: none;
   background: none;
@@ -59,6 +68,7 @@ header {
   cursor: pointer;
   padding: 8px;
   z-index: 101;
+  flex-shrink: 0;       /* 🆕 */
 
   svg {
     width: 28px;
@@ -66,13 +76,12 @@ header {
   }
 }
 
-/* Menu Mobile (escondido no desktop) */
 .mobile-nav {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
+  right: 0;             /* 🆕 em vez de width:100% */
   background-color: var(--bg-light);
   border-bottom: 1px solid #E0D8D0;
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
@@ -81,7 +90,7 @@ header {
   transition: max-height 0.3s ease-in-out;
 
   &.aberto {
-    max-height: 300px; /* Altura suficiente para os links */
+    max-height: 300px;
   }
 
   ul {
@@ -90,40 +99,29 @@ header {
     display: flex;
     flex-direction: column;
 
-    li {
-      a {
-        display: block;
-        padding: 16px 24px;
-        text-decoration: none;
-        color: var(--text-dark);
-        font-size: 16px;
-        font-weight: 500;
-        border-bottom: 1px solid #f0e8e0;
+    li a {
+      display: block;
+      padding: 16px 24px;
+      text-decoration: none;
+      color: var(--text-dark);
+      font-size: 16px;
+      font-weight: 500;
+      border-bottom: 1px solid #f0e8e0;
 
-        &:hover {
-          background-color: rgba(219, 124, 0, 0.05);
-          color: var(--accent);
-        }
+      &:hover {
+        background-color: rgba(219, 124, 0, 0.05);
+        color: var(--accent);
       }
+    }
 
-      &:last-child a {
-        border-bottom: none;
-      }
+    li:last-child a {
+      border-bottom: none;
     }
   }
 }
 
-/* Responsivo */
 @media (max-width: 900px) {
-  .desktop-nav {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .mobile-nav {
-    display: block;
-  }
+  .desktop-nav { display: none; }
+  .menu-toggle { display: flex; }
+  .mobile-nav  { display: block; }
 }

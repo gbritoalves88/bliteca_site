@@ -50,6 +50,46 @@
     color: var(--text-dark);
     margin-top: 24px;
   }
+
+  /* Botão Google Play */
+  .googlePlay-image {
+    display: inline-block;
+    margin-top: 32px;
+    margin-left: auto;        /* empurra para a direita */
+    padding: 8px 12px;        /* "sobra" interna */
+    border-radius: 14px;      /* bordas arredondadas */
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    line-height: 0;           /* remove espaço extra abaixo da img */
+
+    img {
+      height: 56px;
+      width: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--text-dark, #000);
+      outline-offset: 3px;
+    }
+  }
+
+  /* Container do texto alinhado à direita no bloco */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  /* Faz o botão ir para a direita dentro da coluna */
+  .googlePlay-image {
+    align-self: flex-end;
+  }
 }
 
 /* Responsivo */
@@ -60,10 +100,17 @@
   }
 
   .sobre-image {
-    order: -1; /* Joga a imagem para cima no celular */
+    order: -1;
   }
 
   .sobre-text {
+    align-items: center; /* centraliza no mobile */
+
     h2 { font-size: 32px; }
+
+    .googlePlay-image {
+      align-self: center; /* centraliza o botão no mobile */
+      margin-left: 0;
+    }
   }
 }

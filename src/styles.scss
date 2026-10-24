@@ -1,23 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
-  --bg-light: #FAF3E8; /* 🆕 Nova cor de fundo principal */
+  --bg-light: #FAF3E8;
   --bg-white: #ffffff;
-  --bg-card: #F5EFE6;  /* Um tom levemente mais escuro para cartões/seções */
+  --bg-card: #F5EFE6;
   --text-dark: #2A2522;
   --text-muted: #6B6560;
   --accent: #db7c00;
   --accent-hover: #b86600;
 }
 
-* {
+/* Reset */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base */
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;      /* trava scroll horizontal no html (iOS) */
+  -webkit-text-size-adjust: 100%; /* evita zoom automático de fonte no iOS */
 }
 
 body {
@@ -26,15 +32,64 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
+/* Container */
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-img {
+/* Mídia */
+img,
+picture,
+video,
+canvas,
+svg {
   max-width: 100%;
+  height: auto;
   display: block;
+}
+
+/* Formulários herdam a fonte */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Títulos e parágrafos */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  color: var(--text-dark);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* Links sem decoração por padrão (ajuste onde precisar) */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Quebra de palavras longas em mobile */
+body,
+h1, h2, h3, h4, h5, h6,
+p, a, span, li {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Responsivo do container */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
 }
