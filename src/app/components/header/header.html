@@ -1,0 +1,45 @@
+<header>
+  <div class="container header-content">
+    <a href="#inicio" class="logo" aria-label="BliTeca Home" (click)="fecharMenu()">
+
+      <img src="favicon.png" alt="Tela do app BliTeca" class="features-phone" />
+
+      BliTeca
+    </a>
+
+    <!-- Menu Desktop -->
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#app">O Aplicativo</a></li>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botão Hambúrguer (Mobile) -->
+    <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="menuAberto()" aria-label="Abrir menu">
+      @if (menuAberto()) {
+        <!-- Ícone X (Fechar) -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      } @else {
+        <!-- Ícone Hambúrguer -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      }
+    </button>
+  </div>
+
+  <!-- Menu Mobile (Dropdown) -->
+  <div class="mobile-nav" [class.aberto]="menuAberto()">
+    <ul>
+      <li><a href="#inicio" (click)="fecharMenu()">Início</a></li>
+      <li><a href="#app" (click)="fecharMenu()">O Aplicativo</a></li>
+      <li><a href="#sobre" (click)="fecharMenu()">Sobre Nós</a></li>
+      <li><a href="#contato" (click)="fecharMenu()">Contato</a></li>
+    </ul>
+  </div>
+</header>

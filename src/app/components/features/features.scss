@@ -1,0 +1,144 @@
+.features {
+  background-color: var(--bg-white); /* Mantém branco para contraste */
+  padding: 60px 0;
+}
+
+.features-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.features-text {
+  .tagline {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    line-height: 1.6;
+    max-width: 480px;
+  }
+}
+
+.grid-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px; /* Leve redução */
+}
+
+.feature-item {
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #E0D8D0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+
+    svg {
+      width: 22px;
+      height: 22px;
+      color: var(--text-dark);
+    }
+  }
+
+  h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-dark);
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+}
+
+.features-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.features-bg-circle {
+  position: absolute;
+  width: 480px; /* Círculo maior */
+  height: 480px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  opacity: 0.15;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.features-phone {
+  width: 100%;
+  max-width: 430px; /* Aumentado de 340 para 430 */
+  height: auto;
+  border-radius: 45px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .features {
+    padding: 40px 0;
+  }
+
+  .features-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .features-text {
+    h2 { font-size: 32px; }
+    .subtitle { margin: 0 auto 32px; }
+  }
+
+  .grid-features {
+    text-align: left;
+  }
+
+  .features-bg-circle {
+    width: 320px;
+    height: 320px;
+  }
+
+  .features-phone {
+    max-width: 340px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-features {
+    grid-template-columns: 1fr;
+  }
+}

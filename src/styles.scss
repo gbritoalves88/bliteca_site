@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+  --bg-light: #FAF3E8; /* 🆕 Nova cor de fundo principal */
+  --bg-white: #ffffff;
+  --bg-card: #F5EFE6;  /* Um tom levemente mais escuro para cartões/seções */
+  --text-dark: #2A2522;
+  --text-muted: #6B6560;
+  --accent: #db7c00;
+  --accent-hover: #b86600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

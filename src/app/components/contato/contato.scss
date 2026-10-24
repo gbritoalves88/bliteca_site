@@ -1,0 +1,120 @@
+.contato {
+  background-color: var(--bg-white);
+  padding: 100px 0;
+}
+
+.contato-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.contato-text {
+  .tagline {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  p {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    max-width: 400px;
+    line-height: 1.6;
+  }
+}
+
+/* Botão principal laranja */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--accent);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.2s, transform 0.2s;
+
+  svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+  }
+}
+
+/* Lado direito - informações */
+.contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-left: 40px;
+  border-left: 1px solid #E0D8D0;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+    }
+  }
+
+  span {
+    font-size: 15px;
+    color: var(--text-dark);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .contato-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contato-text {
+    p { margin: 0 auto 32px; }
+    h2 { font-size: 32px; }
+  }
+
+  .contato-info {
+    padding-left: 0;
+    border-left: none;
+    align-items: center;
+  }
+}

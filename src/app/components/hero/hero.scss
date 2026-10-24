@@ -1,0 +1,116 @@
+.hero {
+  /* Ajuste dos espaçamentos */
+  padding-top: 120px;
+  padding-bottom: 40px;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+
+  .tagline {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+
+  p {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 400px;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent);
+  }
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-bg-circle {
+  position: absolute;
+  width: 550px; /* Círculo maior para acompanhar a imagem */
+  height: 550px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  opacity: 0.15;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-phone {
+  width: 100%;
+  max-width: 480px; /* Aumentado de 380 para 480 */
+  height: auto;
+  border-radius: 45px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 40px;
+    min-height: auto; /* No mobile, deixa a altura se ajustar ao conteúdo */
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .hero-text {
+    h1 { font-size: 42px; }
+    p { margin: 0 auto 32px; }
+    .divider { margin: 0 auto; }
+  }
+
+  .hero-bg-circle {
+    width: 350px;
+    height: 350px;
+  }
+
+  .hero-phone {
+    max-width: 380px; /* Ainda grande no celular */
+  }
+}
