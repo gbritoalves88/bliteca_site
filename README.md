@@ -6,6 +6,8 @@ O projeto consiste em uma landing page responsiva desenvolvida com Angular, apre
 
 **Repositório:** https://github.com/gbritoalves88/bliteca_site
 
+**Site:** https://bliteca.com.br
+
 **Aplicativo:** [BliTeca na Google Play](https://play.google.com/store/apps/details?id=com.bliteca.app)
 
 ---
